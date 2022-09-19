@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p>Nhập từ khóa</p>
+<input type="text" id="input">
+<button type="button" onclick="check()" value="Tra cứu">Tra cứu</button>
+Result: <p id="result"></p>
+<script>
+    let n = +prompt("Nhập số lượng từ vựng cho từ điển");
+    let vn,en;
+    let enWordArr = [];
+    let vnWordArr = [];
+    for (let i = 0; i < n; i++) {
+       en = prompt("Nhập từ tiếng anh" + (i+1));
+       vn = prompt("Nhập từ tiếng việt" + (i+1));
+        enWordArr.push(en);
+        vnWordArr.push(vn);
+    }
+
+    function check() {
+        let keyWord = document.getElementById("input").value;
+        let result = "";
+        for (let i = 0; i < enWordArr.length; i++) {
+            if (keyWord === enWordArr[i]) {
+                result = vnWordArr[i];
+                break;
+            } else {
+                result = "Không tìm thấy";
+            }
+        }
+        document.getElementById("result").innerHTML = result;
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+Nhập số : <input type="text" id="number">
+<button type="button" onclick="check()">Chuyển</button>
+<br>
+Result: <p id="result"></p>
+<script>
+
+
+    function check() {
+        let n = document.getElementById("number").value;
+        let str = n.toString();
+        // let str = n;
+        let result = [str[0]];
+        for (let i = 1; i < str.length; i++) {
+            if ((str[(i - 1)] % 2 === 0) && (str[i] % 2 === 0)) {
+                result.push('-' + str[i]);
+            } else {
+                result.push(str[i]);
+            }
+        }
+        document.getElementById("result").innerHTML = result.join('');
+    }
+</script>
+</body>
+</html>

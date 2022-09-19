@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<span>
+<p>["Red","Green","White","Black"]</p>
+<button type="button" id="change" onclick="check()">Chuyển sang chuỗi</button></span><br>
+    Result: <p id="result"></p>
+<script>
+    let myColor = ["Red","Green","White","Black"];
+    // console.log(myColor.join());
+    function check() {
+        result = myColor.join();
+    document.getElementById("result").innerHTML = result;
+    }
+</script>
+</body>
+</html>

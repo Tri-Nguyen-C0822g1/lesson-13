@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+Nhập : <input type="text" id="text">
+<button type="button" onclick="check()">Chuyển</button>
+<br>
+Result: <p id="result"></p>
+<script>
+    function check() {
+        let str = document.getElementById("text").value;
+        let result = [str['']];
+        let UPPER = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+        let LOWER = 'abcdefghijklmnopqrstuvwxyz';
+        for (let i = 0; i < str.length; i++) {
+            if (UPPER.indexOf(str[i]) !== -1) {
+                result.push(str[i].toLowerCase());
+            } else if (LOWER.indexOf(str[1]) !== -1) {
+                result.push(str[i].toUpperCase());
+            } else {
+                result.push(str[i]);
+            }
+        }
+        document.getElementById("result").innerHTML = result.join('');
+    }
+</script>
+</body>
+</html>
